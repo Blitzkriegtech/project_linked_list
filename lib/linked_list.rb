@@ -117,7 +117,7 @@ class LinkedList
 
     if index.zero?
       @head = @head.next_node
-      @tail = nil if @size - 1
+      @tail = nil if @head.nil?
     elsif index == @size - 1
       pop
       return
@@ -128,4 +128,15 @@ class LinkedList
     @size -= 1
   end
   # rubocop:enable Metrics/MethodLength
+
+  # checks if the list contains the value
+  def contains?(value)
+    current = @head
+    while current
+      return true if current.value == value
+
+      current = current.next_node
+    end
+    false
+  end
 end
