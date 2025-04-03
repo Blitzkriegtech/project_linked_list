@@ -30,6 +30,7 @@ class LinkedList
     end
     @tail = new_node
     @size += 1
+    nil
   end
 
   # adds a new node at the start of the list
@@ -42,6 +43,7 @@ class LinkedList
     end
     @head = new_node
     @size += 1
+    nil
   end
 
   # returns the node at the given index
@@ -50,7 +52,7 @@ class LinkedList
 
     current = @head
     index.times { current = current.next_node }
-    current
+    current.value
   end
 
   # removes the last node from the list
@@ -109,6 +111,7 @@ class LinkedList
       prev_node.next_node = new_node
       @size += 1
     end
+    nil
   end
 
   # removes the node at the given index
@@ -126,6 +129,7 @@ class LinkedList
       prev_node.next_node = prev_node.next_node.next_node
     end
     @size -= 1
+    nil
   end
   # rubocop:enable Metrics/MethodLength
 

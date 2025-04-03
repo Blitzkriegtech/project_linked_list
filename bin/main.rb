@@ -32,3 +32,4 @@ puts list
 list.pop
 puts list
 puts list.size
+puts list.at(3)
